@@ -232,7 +232,7 @@ export default function App() {
       setTimeout(() => setLoadingStep(1), 2000)
       setTimeout(() => setLoadingStep(2), 4000)
 
-      const res = await fetch('http://localhost:3001/extract', {
+      const res = await fetch('/api/extract', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
