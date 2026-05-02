@@ -232,7 +232,8 @@ export default function App() {
       setTimeout(() => setLoadingStep(1), 2000)
       setTimeout(() => setLoadingStep(2), 4000)
 
-      const res = await fetch('/api/extract', {
+      const API_URL = import.meta.env.PROD ? '/api/extract' : 'http://localhost:3001/extract'
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
